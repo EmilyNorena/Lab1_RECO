@@ -48,88 +48,65 @@
 
 **En este punto elegimos los siguientes paquetes de instalacion:
 
+# Categorías de Paquetes
+
 ## Categoría: `a`
-- aaa_base
-- aaa_glibc-solibs
-- aaa_libraries
-- aaa_terminfo
-- acl
-- attr
-- bash
-- bin
-- bzip2
-- coreutils
-- cpio
-- cracklib
-- dbus
-- dcron
-- devs
-- dialog
-- e2fsprogs
-- elogind
-- etc
-- eudev
-- file
-- findutils
-- gawk
-- glibc-zoneinfo
-- grep
-- gzip
-- hostname
-- kbd
-- kernel-firmware
-- kernel-generic
-- kernel-huge
-- kernel-modules
-- kmod
-- less
-- libgudev
-- libpwquality
-- lilo
-- logrotate
-- mkinitrd
-- nvi
-- openssl-solibs
-- os-prober
-- pam
-- pkgtools
-- procps-ng
-- sed
-- shadow
-- sharutils
-- syslinux
-- sysklogd
-- sysvinit
-- sysvinit-scripts
-- tar
-- util-linux
-- which
-- xz
+
+| Paquete             | Paquete             | Paquete             | Paquete             | Paquete             |
+|---------------------|---------------------|---------------------|---------------------|---------------------|
+| aaa_base            | kernel-modules      | aaa_glibc-solibs    | kmod                | aaa_libraries       |
+| aaa_terminfo        | libgudev            | acl                 | libpwquality        | attr                |
+| bash                | lilo                | logrotate           | bin                 | mkinitrd            |
+| bzip2               | nvi                 | coreutils           | openssl-solibs      | cpio                |
+| cracklib            | pam                 | dbus                | pkgtools            | dcron               |
+| procps-ng           | devs                | sed                 | dialog              | shadow              |
+| e2fsprogs           | sharutils           | elogind             | syslinux            | etc                 |
+| sysklogd            | eudev               | sysvinit            | file                | sysvinit-scripts    |
+| findutils           | tar                 | gawk                | util-linux          | glibc-zoneinfo      |
+| which               | xz                  | gzip                | hostname            | kbd                 |
+| kernel-firmware     | kernel-generic      | kernel-huge         |                     |                     |
+
+---
 
 ## Categoría: `ap`
-- slackpkg
-- nano
-- sudo
+
+<div align="center">
+| Paquete             | Paquete             |
+|---------------------|---------------------|
+| slackpkg            | nano                |
+| sudo                |                     |
+
+</div>
+
 
 ## Categoría: `d`
-- perl
+
+| Paquete             | Paquete             |
+|---------------------|---------------------|
+| perl                |                     |
+
+---
 
 ## Categoría: `L`
-- libunistring
-- ncurses
+
+| Paquete             | Paquete             |
+|---------------------|---------------------|
+| libunistring       | ncurses             |
+
+---
 
 ## Categoría: `n`
-- ca-certificates
-- gnupg
-- iproute2
-- iputils
-- libmnl
-- net-tools
-- network-scripts
-- ntp
-- openssh
-- openssl
-- wget
+
+| Paquete             | Paquete             |
+|---------------------|---------------------|
+| ca-certificates     | iputils             |
+| iproute2            | net-tools           |
+| libmnl              | npt                 |
+| network-scripts     | openssl             |
+| openssh             | wget                |
+| gnupg               |                     |
+
+
 
 **Instalamos LILO en modo "simple"**
 
