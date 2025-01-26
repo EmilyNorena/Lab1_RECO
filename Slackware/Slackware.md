@@ -113,8 +113,8 @@
 <div align="center">
 
 | Paquete             | Paquete             |
-|---------------------|
-| perl                |
+|---------------------|---------------------|
+| perl                |                     |
 
 </div>
 
@@ -131,7 +131,6 @@
 </div>
 
 ---
-
 ## Categoría: `n`
 
 <div align="center">
@@ -146,6 +145,7 @@
 | gnupg               |                     |
 
 </div>
+
 
 **Instalamos LILO en modo "simple"**
 
