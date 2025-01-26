@@ -71,6 +71,7 @@
 ## Categoría: `ap`
 
 <div align="center">
+
 | Paquete             | Paquete             |
 |---------------------|---------------------|
 | slackpkg            | nano                |
