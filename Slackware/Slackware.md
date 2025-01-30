@@ -9,7 +9,7 @@
 <img src="https://github.com/user-attachments/assets/1a1fa3ac-d721-4968-a141-230de605ca0e" alt="Configuración del teclado">
 </div>
 
-**Hacemos un login como "root"**
+**Hacemos un login como "root"** 
 
 <div align="center">
 <img src="https://github.com/user-attachments/assets/5f489209-94c3-40e3-99b9-df2765859a71" alt="Login como root">
