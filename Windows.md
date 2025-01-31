@@ -2,21 +2,6 @@
 
 ### Máquina sin interfaz
 
-Iniciamos con una configuración básica, colocándole su respectivo nombre.
-
-
-
-Le configuramos un tamaño básico para la RAM.
-
-
-
-Le asignamos 15GB de almacenamiento.
-
-
-
-Configuramos la red.
-
-
 Podemos seleccionar el teclado en español Colombia.
 
 ![Captura5](https://github.com/user-attachments/assets/09666b1a-a346-428e-801a-67a577c4ad2b)
@@ -35,7 +20,7 @@ Elegimos la instalación personalizada.
 
 Seleccionamos el disco recién creado.
 
-![Captura9](https://github.com/user-attachments/assets/9e37702e-21c7-41d0-b946-661ee5b2adba)
+![Captura29](https://github.com/user-attachments/assets/55943cf2-80b1-41fb-858c-a7fa3b6b6e4c)
 
 Esperamos un rato a que instale.
 
@@ -43,7 +28,7 @@ Esperamos un rato a que instale.
 
 Seleccionamos "OK" para asignarle una contraseña.
 
-![Captura11](https://github.com/user-attachments/assets/4ad02504-8ffa-4767-a754-9be30ab18d27)
+![imagen](https://github.com/user-attachments/assets/94c9f194-e41f-4ae5-8e2e-67cd85882d41)
 
 Digitamos una contraseña "root1234" y presionamos ENTER.
 
@@ -114,11 +99,11 @@ Esperamos a que termine la instalación.
 
 Iniciamos la configuración asignando una contraseña para el perfil de Administrador "Root123".
 
-![Captura31](https://github.com/user-attachments/assets/b76bb273-34f1-4b61-a9d6-23764b12751e)
+![imagen](https://github.com/user-attachments/assets/d2b1d261-0b68-4e29-84e5-19f6c32a618d)
 
-Después de acceder, nos encontramos en el menú principal.
+Después de acceder, nos encontramos en esto.
 
-![Captura32](https://github.com/user-attachments/assets/5b9daddb-2ff3-4d16-86f3-368f0009a4bb)
+![imagen](https://github.com/user-attachments/assets/d7543964-1fe7-4b52-841a-3c5516a35e13)
 
 Para crear los demás usuarios, entramos en cmd e ingresamos los siguientes comandos para agregar a cada usuario a un rol distinto.
 
