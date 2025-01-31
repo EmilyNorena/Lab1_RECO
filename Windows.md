@@ -1,204 +1,150 @@
-### Documentación de instalación de Slackware
+### Creación de la Máquina Virtual de Windows
 
-**Para iniciar con esta instalación es necesario tener la imagen de la versión que queremos instalar, en nuestro caso será la 15.0**  
-**Realizamos la configuración necesaria dentro de VMware, como el número de procesadores, el tamaño de la RAM, el tamaño del disco y la configuración de la tarjeta de red.**
+### Máquina sin interfaz
 
-**Una vez iniciada la máquina, lo primero será la configuración del teclado, donde seleccionaremos "qwerty/la-latin1.map"**
+Iniciamos con una configuración básica, colocándole su respectivo nombre.
 
-<div align="center">
-<img src="https://github.com/user-attachments/assets/1a1fa3ac-d721-4968-a141-230de605ca0e" alt="Configuración del teclado">
-</div>
 
-**Hacemos un login como "root"** 
 
-<div align="center">
-<img src="https://github.com/user-attachments/assets/5f489209-94c3-40e3-99b9-df2765859a71" alt="Login como root">
-</div>
+Le configuramos un tamaño básico para la RAM.
 
-**Iniciamos con las particiones del disco de la máquina, para ello ingresamos el comando "cfdisk"**
 
-<div align="center">
-<img src="https://github.com/user-attachments/assets/1664db1f-5e2d-4365-a654-29ef52cb4614" alt="Comando cfdisk">
-</div>
 
-**Luego seleccionamos la opción "gpt"**
+Le asignamos 15GB de almacenamiento.
 
-<div align="center">
-<img src="https://github.com/user-attachments/assets/f88365bb-9a60-4dc9-a542-474a47a9ec83" alt="Selección de GPT">
-</div>
 
-**Realizamos dos particiones, una de tipo swap y la otra estándar**
 
-<div align="center">
-<img src="https://github.com/user-attachments/assets/c7c0cafe-17c6-43ff-a956-b23bd615727d" alt="Particiones">
-</div>
+Configuramos la red.
 
-**Una vez terminada esta parte, ingresamos el comando "setup"**
 
-<div align="center">
-<img src="https://github.com/user-attachments/assets/ba0f32a9-76a1-463e-a2e8-3cc6bad7ef06" alt="Comando setup">
-</div>
+Podemos seleccionar el teclado en español Colombia.
 
-**En la primera parte le daremos "ok"**
+![Captura5](https://github.com/user-attachments/assets/09666b1a-a346-428e-801a-67a577c4ad2b)
 
-<div align="center">
-<img src="https://github.com/user-attachments/assets/0a922213-5b51-4d34-955b-ab9b842a68bb" alt="Primera confirmación">
-</div>
+En este caso, como se quiere instalar sin interfaz gráfica, seleccionamos la versión Standard.
 
-**Nuevamente le daremos "ok"**
+![imagen](https://github.com/user-attachments/assets/da526663-3a63-4d8d-9169-3b0ce9e4f3b3)
 
-<div align="center">
-<img src="https://github.com/user-attachments/assets/6c71c867-99cb-46b5-a0db-8eb7f6ca4c14" alt="Segunda confirmación">
-</div>
+Aceptamos los términos.
 
-**Seleccionamos "ext4" como tipo de sistema de archivos**
+![imagen](https://github.com/user-attachments/assets/beb2b444-5014-46a0-b992-fe7cb0feb85e)
 
-<div align="center">
-<img src="https://github.com/user-attachments/assets/f720471f-408f-4108-8664-294cf466ca0c" alt="Selección de ext4">
-</div>
+Elegimos la instalación personalizada.
 
-**Elegimos la primera opción ya que estamos usando una "iso"**
+![Captura28](https://github.com/user-attachments/assets/3bfaa0ff-3db6-4a55-b7bc-d87f10b517b5)
 
-<div align="center">
-<img src="https://github.com/user-attachments/assets/d7305195-2d0f-4eaf-aac4-380577152cbb" alt="Selección de ISO">
-</div>
+Seleccionamos el disco recién creado.
 
-**Luego elegimos el modo de instalación "expert" para tener un mayor control de qué estamos instalando**
+![Captura9](https://github.com/user-attachments/assets/9e37702e-21c7-41d0-b946-661ee5b2adba)
 
-<div align="center">
-<img src="https://github.com/user-attachments/assets/2322c88f-9bad-410b-a7db-c2d44378c405" alt="Modo de instalación expert">
-</div>
+Esperamos un rato a que instale.
 
-**En este punto elegimos los siguientes paquetes de instalación:**
+![imagen](https://github.com/user-attachments/assets/d31c719c-12b7-4dce-bc0a-7d3ffde4d45a)
 
----
+Seleccionamos "OK" para asignarle una contraseña.
 
-## Categoría: `a`
+![Captura11](https://github.com/user-attachments/assets/4ad02504-8ffa-4767-a754-9be30ab18d27)
 
-<div align="center">
+Digitamos una contraseña "root1234" y presionamos ENTER.
 
-| Paquete             | Paquete             | Paquete             | Paquete             | Paquete             |
-|---------------------|---------------------|---------------------|---------------------|---------------------|
-| aaa_base            | kernel-modules      | aaa_glibc-solibs    | kmod                | aaa_libraries       |
-| aaa_terminfo        | libgudev            | acl                 | libpwquality        | attr                |
-| bash                | lilo                | logrotate           | bin                 | mkinitrd            |
-| bzip2               | nvi                 | coreutils           | openssl-solibs      | cpio                |
-| cracklib            | pam                 | dbus                | pkgtools            | dcron               |
-| procps-ng           | devs                | sed                 | dialog              | shadow              |
-| e2fsprogs           | sharutils           | elogind             | syslinux            | etc                 |
-| sysklogd            | eudev               | sysvinit            | file                | sysvinit-scripts    |
-| findutils           | tar                 | gawk                | util-linux          | glibc-zoneinfo      |
-| which               | xz                  | gzip                | hostname            | kbd                 |
-| kernel-firmware     | kernel-generic      | kernel-huge         |                     |                     |
+![Captura12](https://github.com/user-attachments/assets/68464a4f-e21b-42e1-8995-654d16c7578b)
 
-</div>
+Esperamos que inicie.
 
----
+![Captura13](https://github.com/user-attachments/assets/a1fbd167-76ff-48ca-92aa-930070987e8e)
 
-## Categoría: `ap`
+Iniciamos la configuración de red, eligiendo la opción 8.
 
-<div align="center">
+![Captura14](https://github.com/user-attachments/assets/efca80cd-8537-4427-8fa9-6c3116fa24b9)
 
-| Paquete             | Paquete             |
-|---------------------|---------------------|
-| slackpkg            | nano                |
-| sudo                |                     |
+Seleccionamos la opción 1.
 
-</div>
+![Captura15](https://github.com/user-attachments/assets/89a8c6a5-44a8-46c3-9ae0-f093c5cf0438)
 
----
+Nuevamente seleccionamos la opción 1 para configurar la red.
 
-## Categoría: `d`
+![Captura16](https://github.com/user-attachments/assets/e3cce41c-8481-438f-b00a-61192070f768)
 
-<div align="center">
+Ingresamos "S" para continuar.
 
-| Paquete             | Paquete             |
-|---------------------|---------------------|
-| perl                |                     |
+![Captura17](https://github.com/user-attachments/assets/bbee3e43-30ff-4367-841d-a70dead329ec)
 
-</div>
+Escribimos la IP dada por el laboratorio.\
+\*\
+Ingresamos la máscara también dada por el laboratorio.\
+\*\
+Escribimos el "Gateway".\
+\*\
+Después de presionar ENTER, ingresamos nuevamente al menú seleccionando la opción 8.\
+\*\
+Accedemos a la configuración de DNS.\
+\*\
+Ingresamos el DNS proporcionado por la guía.\
+\*\
+Salimos de la configuración eligiendo la opción 15.\
+\*\
+Iniciamos las pruebas de ping, empezando por "8.8.8.8".\
+\*\
+Realizamos las pruebas con los demás valores.\
+\*\
+Procedemos a agregar los 3 usuarios solicitados.\
+\*\
+Asignamos a cada uno un grupo distinto para que tengan diferentes permisos.\
+\*\
+Finalmente, confirmamos que cada usuario esté dentro de su grupo correspondiente.\
+\*
 
----
+### Máquina con interfaz
 
-## Categoría: `L`
+Realizamos los primeros pasos de la misma manera que en la anterior.\
+\*\
+\*\
+\*\
+\*\
+\*\
+\*\
+En este punto, a diferencia de la máquina anterior, seleccionamos "Standard (Desktop Experience)".\
+\*\
+Seleccionamos la instalación "Custom".\
+\*\
+Elegimos el disco recién creado.\
+\*\
+Esperamos a que termine la instalación.\
+\*\
+Iniciamos la configuración asignando una contraseña para el perfil de Administrador "Root1234".\
+\*\
+\*\
+Después de acceder, nos encontramos en el menú principal.\
+\*\
+Para crear los demás usuarios, entramos en configuración.\
+\*\
+Accedemos a "Accounts".\
+\*\
+Seleccionamos "Other Users".\
+\*\
+Hacemos clic en "Add".\
+\*\
+Ingresamos a la carpeta de Users.\
+\*\
+Hacemos clic derecho y seleccionamos "New User".\
+\*\
+Completamos los datos solicitados para cada usuario.\
+\*\
+\*\
+\*\
+Verificamos que aparezcan los usuarios creados.\
+\*\
+Para configurar la red, ingresamos a la configuración de Ethernet y seleccionamos "Change adapter options".\
+\*\
+Hacemos clic derecho sobre Ethernet y elegimos "Properties".\
+\*\
+Seleccionamos "Internet Protocol" y accedemos a sus propiedades.\
+\*\
+Actualizamos todos los datos internos con los propuestos en la guía.\
+\*\
+Confirmamos los cambios seleccionando "Aceptar".\
+\*\
+A partir de este momento, podemos realizar las pruebas de ping y con esto damos por finalizada la configuración.
 
-<div align="center">
 
-| Paquete             | Paquete             |
-|---------------------|---------------------|
-| libunistring       | ncurses             |
 
-</div>
-
----
-## Categoría: `n`
-
-<div align="center">
-
-| Paquete             | Paquete             |
-|---------------------|---------------------|
-| ca-certificates     | iputils             |
-| iproute2            | net-tools           |
-| libmnl              | npt                 |
-| network-scripts     | openssl             |
-| openssh             | wget                |
-| gnupg               |                     |
-
-</div>
-
-
-**Instalamos LILO en modo "simple"**
-
-<div align="center">
-<img src="https://github.com/user-attachments/assets/8ba0f6a4-6013-47ab-9d86-50ff7de2b49f" alt="Instalación de LILO">
-</div>
-
-**Elegimos "standard"**
-
-<div align="center">
-<img src="https://github.com/user-attachments/assets/4229b57c-53a9-46dc-b0d2-78ad3f545b72" alt="Selección de standard">
-</div>
-
-**En ruta de instalación elegimos "MBR"**
-
-<div align="center">
-<img src="https://github.com/user-attachments/assets/edf633b7-e019-46dd-8927-722168749182" alt="Ruta de instalación MBR">
-</div>
-
-**En nombre de dominio ponemos "escuelaing.edu.co"**
-
-<div align="center">
-<img src="https://github.com/user-attachments/assets/7ec05c4d-4b27-45ed-8250-3d6c16c62c07" alt="Nombre de dominio">
-</div>
-
-**Elegimos "static IP"**
-
-<div align="center">
-<img src="https://github.com/user-attachments/assets/f94660fb-f22d-49aa-a655-997a059082e3" alt="Selección de Static IP">
-</div>
-
-**Escogemos la opción "nvi"**
-
-<div align="center">
-<img src="https://github.com/user-attachments/assets/9ac6b648-8c78-4b8c-92dd-67899c5bd158" alt="Selección de nvi">
-</div>
-
-**En IPv4 agregamos la IP asignada en el laboratorio**
-
-<div align="center">
-<img src="https://github.com/user-attachments/assets/5029ff7f-61c0-4bf8-a450-56698cd15e9e" alt="Configuración de IPv4">
-</div>
-
-**De GATEWAY agregamos 10.2.65.1**
-
-<div align="center">
-<img src="https://github.com/user-attachments/assets/abc2f6f2-c2d9-44bd-a272-f82b2f9acda4" alt="Configuración de Gateway">
-</div>
-
-**Finalmente nos queda algo así**
-
-<div align="center">
-<img src="https://github.com/user-attachments/assets/1ef3b218-58b4-4e67-adf5-d1644548f759" alt="Configuración final">
-</div>
-
-**Y reiniciamos**
