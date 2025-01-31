@@ -202,3 +202,13 @@
 </div>
 
 **Y reiniciamos**
+
+**Luego para hacer la creacion de los usuarios pedidos en la guia usamos los siguientes comandos, primero creamos los grupos:**
+
+![imagen](https://github.com/user-attachments/assets/475c3fee-023a-49db-95c7-f48a545a08ef)
+
+**Creamos los usuarios**
+
+![imagen](https://github.com/user-attachments/assets/764eeed5-3868-42f3-be86-4d4074555bba)
+
+![imagen](https://github.com/user-attachments/assets/2e4a5d09-6880-4f34-a8cb-f8bc459c3556)
