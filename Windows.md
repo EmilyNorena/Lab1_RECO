@@ -69,30 +69,29 @@ Ingresamos "S" para continuar.
 
 ![Captura17](https://github.com/user-attachments/assets/bbee3e43-30ff-4367-841d-a70dead329ec)
 
-Escribimos la IP dada por el laboratorio.\
-\*\
-Ingresamos la máscara también dada por el laboratorio.\
-\*\
-Escribimos el "Gateway".\
-\*\
-Después de presionar ENTER, ingresamos nuevamente al menú seleccionando la opción 8.\
-\*\
-Accedemos a la configuración de DNS.\
-\*\
-Ingresamos el DNS proporcionado por la guía.\
-\*\
-Salimos de la configuración eligiendo la opción 15.\
-\*\
-Iniciamos las pruebas de ping, empezando por "8.8.8.8".\
-\*\
-Realizamos las pruebas con los demás valores.\
-\*\
-Procedemos a agregar los 3 usuarios solicitados.\
-\*\
-Asignamos a cada uno un grupo distinto para que tengan diferentes permisos.\
-\*\
-Finalmente, confirmamos que cada usuario esté dentro de su grupo correspondiente.\
-\*
+Escribimos los datos dados por el laboratorio en nuestro caso Adrress: 10.2.78.51 Mask: 255.255.0.0 Gateway: 10.2.65.1.
+
+![Captura45](https://github.com/user-attachments/assets/9553d923-3c0d-471a-92aa-fdaf1818915c)
+
+Después de presionar ENTER, ingresamos nuevamente al menú seleccionando la opción 8.
+
+![Captura44](https://github.com/user-attachments/assets/a1605596-6157-4dba-bba5-c2eb086635fe)
+
+Accedemos a la configuración de DNS.
+
+![Captura46](https://github.com/user-attachments/assets/1cdfb86b-dd2d-4253-bd28-5c43fc1c1e59)
+
+Ingresamos el DNS proporcionado por la guía "10.2.65.1".
+
+![Captura47](https://github.com/user-attachments/assets/dc8b12dd-ff24-4455-aa48-2d8bfbad8d54)
+
+Salimos de la configuración eligiendo la opción 15.
+
+![Captura48](https://github.com/user-attachments/assets/5beb8399-a094-4b2e-8ed5-45b14617eb7f)
+
+Iniciamos las pruebas de ping, empezando por "8.8.8.8".
+
+![imagen](https://github.com/user-attachments/assets/6beeade2-2de1-4ac5-b1be-f7ab76d15fa0)
 
 ### Máquina con interfaz
 
