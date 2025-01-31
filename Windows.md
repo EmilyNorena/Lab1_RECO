@@ -95,54 +95,57 @@ Iniciamos las pruebas de ping, empezando por "8.8.8.8".
 
 ### Máquina con interfaz
 
-Realizamos los primeros pasos de la misma manera que en la anterior.\
-\*\
-\*\
-\*\
-\*\
-\*\
-\*\
-En este punto, a diferencia de la máquina anterior, seleccionamos "Standard (Desktop Experience)".\
-\*\
-Seleccionamos la instalación "Custom".\
-\*\
-Elegimos el disco recién creado.\
-\*\
-Esperamos a que termine la instalación.\
-\*\
-Iniciamos la configuración asignando una contraseña para el perfil de Administrador "Root1234".\
-\*\
-\*\
-Después de acceder, nos encontramos en el menú principal.\
-\*\
-Para crear los demás usuarios, entramos en configuración.\
-\*\
-Accedemos a "Accounts".\
-\*\
-Seleccionamos "Other Users".\
-\*\
-Hacemos clic en "Add".\
-\*\
-Ingresamos a la carpeta de Users.\
-\*\
-Hacemos clic derecho y seleccionamos "New User".\
-\*\
-Completamos los datos solicitados para cada usuario.\
-\*\
-\*\
-\*\
-Verificamos que aparezcan los usuarios creados.\
-\*\
-Para configurar la red, ingresamos a la configuración de Ethernet y seleccionamos "Change adapter options".\
-\*\
-Hacemos clic derecho sobre Ethernet y elegimos "Properties".\
-\*\
-Seleccionamos "Internet Protocol" y accedemos a sus propiedades.\
-\*\
-Actualizamos todos los datos internos con los propuestos en la guía.\
-\*\
-Confirmamos los cambios seleccionando "Aceptar".\
-\*\
+Realizamos los primeros pasos de la misma manera que en la anterior.
+En este punto, a diferencia de la máquina anterior, seleccionamos "Standard (Desktop Experience)".
+
+![Captura27](https://github.com/user-attachments/assets/5c2d40a7-b1ba-42cb-a5e4-189606c85106)
+
+Seleccionamos la instalación "Custom".
+
+![Captura28](https://github.com/user-attachments/assets/4542a200-e900-4c12-b5c7-fc042e1bd91a)
+
+Elegimos el disco recién creado.
+
+![Captura29](https://github.com/user-attachments/assets/58971fce-da18-4adf-b26f-af0df4e92918)
+
+Esperamos a que termine la instalación.
+
+![Captura30](https://github.com/user-attachments/assets/7369b47c-c920-4255-ab1a-c24a41329006)
+
+Iniciamos la configuración asignando una contraseña para el perfil de Administrador "Root123".
+
+![Captura31](https://github.com/user-attachments/assets/b76bb273-34f1-4b61-a9d6-23764b12751e)
+
+Después de acceder, nos encontramos en el menú principal.
+
+![Captura32](https://github.com/user-attachments/assets/5b9daddb-2ff3-4d16-86f3-368f0009a4bb)
+
+Para crear los demás usuarios, entramos en cmd e ingresamos los siguientes comandos para agregar a cada usuario a un rol distinto.
+
+![imagen](https://github.com/user-attachments/assets/abb00f60-0f6c-4634-a925-e1d6eac4e25b)
+
+![imagen](https://github.com/user-attachments/assets/bccbf7ee-013d-4bc8-82c3-7424178c9f7c)
+
+Para configurar la red, ingresamos a la configuración de Ethernet y seleccionamos "Change adapter options".
+
+![imagen](https://github.com/user-attachments/assets/0484a2a9-b2ce-48ac-9505-ccddb5303f35)
+
+Hacemos clic derecho sobre Ethernet y elegimos "Properties".
+
+![imagen](https://github.com/user-attachments/assets/4797121f-ff47-4a35-92fb-be1b6ed7f0ac)
+
+Seleccionamos "Internet Protocol" y accedemos a sus propiedades.
+
+![imagen](https://github.com/user-attachments/assets/4217b6ef-1914-4e31-b75d-361633c42e3e)
+
+Actualizamos todos los datos internos con los propuestos en la guía.
+
+![imagen](https://github.com/user-attachments/assets/38fc1b51-b22a-4d61-8bc8-d7eec43c6fad)
+
+Confirmamos los cambios seleccionando "Aceptar".
+
+![imagen](https://github.com/user-attachments/assets/a3785dba-e256-470e-a08f-f6ddf960f7c5)
+
 A partir de este momento, podemos realizar las pruebas de ping y con esto damos por finalizada la configuración.
 
 
