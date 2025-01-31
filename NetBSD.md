@@ -113,9 +113,12 @@ Nano es un editor de texto para la terminal y Bash permite ejecutar comandos del
 
 **Actualmente, el teclado no permite ingresar la letra "Ñ", por lo tanto, ejecutamos los siguientes comandos:**
 - chsh -s /usr/pkg/bin/bash
+
 Cuando ejecutamos este comando, le estamos diciendo al sistema que queremos usar bash como shell predeterminado. (ChangeShell)
+
 Reiniciamos la máquina y ahora ejecutamos el comando
 - nano /.profile
+
 En la parte final de este archivo, ingresamos la siguiente línea: export LANG="en_US.UTF-8"
 
 
