@@ -121,6 +121,20 @@ Reiniciamos la máquina y ahora ejecutamos el comando
 
 En la parte final de este archivo, ingresamos la siguiente línea: export LANG="en_US.UTF-8"
 
+**Luego para hacer la creacion de los usuarios pedidos en la guia usamos los siguientes comandos:**
+<div align="center">
+  <img width="600" src="https://github.com/user-attachments/assets/14087b62-547e-45ac-aac6-bd228a50b8ec">
+  <img width="600" src="https://github.com/user-attachments/assets/0700fbe1-3172-4d8d-abe9-793bca27f902">
+  <img width="600" src="https://github.com/user-attachments/assets/15a3e805-53e3-4c57-b5f6-664f97ce37f9">
+  <img width="600" src="https://github.com/user-attachments/assets/b2829974-237b-4ef3-8fb2-144ec38bd9ef">
+  <img width="600" src="https://github.com/user-attachments/assets/5e4c4dd0-f4d3-4661-8239-867bc235d5f6">
+</div>
+
+
+
+
+
+
 
 
 
