@@ -9,6 +9,7 @@ Durante el laboratorio, utilizamos el laboratorio de computación de la instituc
 
 ### Marco teórico
 ###Vitualization software
+
 **https://youtu.be/LrUFoiAMoJI**
 #### Unix-Based Server Setup	
 ##### a. Server Installation and Configuration
