@@ -6,7 +6,6 @@ El objetivo principal de este laboratorio fue instalar y configurar distintas di
 Durante el laboratorio, utilizamos el laboratorio de computación de la institución, que contaba con equipos, acceso a internet y software de virtualización. Cada grupo de estudiantes trajo imágenes de sistemas operativos y dispositivos de almacenamiento externos para completar las tareas asignadas. Se realizaron diversas actividades que abarcaron desde la instalación de sistemas operativos hasta la configuración de usuarios y redes.
 
 ## Desarrollo del tema 
-[Ver información sobre Slackware](Slackware.md)
 
 ### Marco teórico
 #### Unix-Based Server Setup	
@@ -149,142 +148,176 @@ Durante el laboratorio, utilizamos el laboratorio de computación de la instituc
 	2.	En VMWare, importar el archivo OVF
 	3.	Si se importa la máquina virtual desde Virtual Box como OVA, se debe pasar por una herramienta que convierta el archivo OVA a VMX.
 
+- Inicialmente, configure las configuraciones de red automáticamente mediante DHCP y configure las máquinas en modo puente. ¿Qué significan “modo puente” y “modo NAT”?
+  
+	Bridge Mode: La máquina virtual actúa como si fuera una computadora física más dentro de la misma red que el host. Esto significa que la máquina virtual tiene su propia dirección IP dentro de la red local, y puede comunicarse con otros dispositivos de la red como si fuera un equipo físico independiente. La máquina virtual obtiene una dirección IP del mismo rango que el host (del router o del servidor DHCP de la red local).
+	
+	NAT(Network Address Translation) Mode: La máquina virtual se conecta a la red a través del host, pero utiliza una dirección IP privada que el host "traduce" a una dirección IP pública. El host actúa como un router. Esto significa que la máquina virtual no es directamente accesible desde otras computadoras en la red externa, pero puede acceder a Internet a través de la conexión de red del host. Esto puede ser beneficioso cuando se intenta aislar la máquina virtual de posibles ataques o cuando hay direcciones IP limitadas disponibles.
 
+- ¿Qué dirección IP se le asignó a la máquina?: 10.2.78.50
 
-•	Initially, set up network configurations automatically using DHCP and configure the machines in bridge mode. What do ”Bridge Mode” and ”NAT Mode” mean? 
-Bridge Mode: La máquina virtual actúa como si fuera una computadora física más dentro de la misma red que el host. Esto significa que la máquina virtual tiene su propia dirección IP dentro de la red local, y puede comunicarse con otros dispositivos de la red como si fuera un equipo físico independiente. La máquina virtual obtiene una dirección IP del mismo rango que el host (del router o del servidor DHCP de la red local).
-NAT(Network Address Translation) Mode: La máquina virtual se conecta a la red a través del host, pero utiliza una dirección IP privada que el host "traduce" a una dirección IP pública. El host actúa como un router. Esto significa que la máquina virtual no es directamente accesible desde otras computadoras en la red externa, pero puede acceder a Internet a través de la conexión de red del host. Esto puede ser beneficioso cuando se intenta aislar la máquina virtual de posibles ataques o cuando hay direcciones IP limitadas disponibles.
-What IP address was assigned to the machine: 10.2.78.50
+##### b. Understanding and Managing Operating Systems 
 
-•	Compare the installation experiences of the operating systems.
+- ¿Cuál es la estructura de directorios de los sistemas operativos instalados? Enumere los directorios, describa su contenido y compare Slackware y NetBSD.
+  
+	/ (Root):
+	Descripción: El directorio principal, la raíz del sistema de archivos. Todos los demás directorios son subdirectorios de este.
+	Contenido: Todos los directorios del sistema se encuentran aquí.
+	
+	/bin:
+	Descripción: Contiene los binarios esenciales necesarios para el funcionamiento básico del sistema.
+	Contenido: Comandos esenciales como ls, cp, mv, cat, etc.
+	
+	/sbin:
+	Descripción: Contiene binarios del sistema utilizados generalmente para tareas de mantenimiento o recuperación, a menudo por el usuario root.
+	Contenido: Comandos como fsck, reboot, ifconfig, etc.
+	
+	/etc:
+	Descripción: Contiene los archivos de configuración global del sistema.
+	Contenido: Archivos de configuración para la red, servicios del sistema, usuarios, y scripts de inicio, como /etc/passwd, /etc/fstab, /etc/network.
 
-b. Understanding and Managing Operating Systems 
-•	What is the directory structure of the installed operating systems? List the directories, describe their content, and compare Slackware and NetBSD.
-/ (Root):
-Descripción: El directorio principal, la raíz del sistema de archivos. Todos los demás directorios son subdirectorios de este.
-Contenido: Todos los directorios del sistema se encuentran aquí.
+	/dev:
+	Descripción: Contiene los archivos de dispositivo que representan los dispositivos de hardware del sistema.
+	Contenido: Archivos de dispositivos como /dev/sda (dispositivos de disco), /dev/tty (terminales), etc.
+	
+	/home:
+	Descripción: Contiene los directorios personales de los usuarios.
+	Contenido: Cada usuario tiene un directorio bajo /home (por ejemplo, /home/usuario).
+	
+	/var:
+	Descripción: Contiene datos variables, como registros (logs), bases de datos y archivos de cola.
+	Contenido: Archivos de registro en /var/log, colas de correo, archivos temporales, y datos de ejecución.
+	
+	/tmp:
+	Descripción: Contiene archivos temporales que pueden ser creados por las aplicaciones.
+	Contenido: Archivos temporales que pueden eliminarse al reiniciar o apagar el sistema.
 
-/bin:
-Descripción: Contiene los binarios esenciales necesarios para el funcionamiento básico del sistema.
-Contenido: Comandos esenciales como ls, cp, mv, cat, etc.
+	/usr:
+	Descripción: Contiene programas, bibliotecas y documentación relacionada con el usuario.
+	Contenido: Subdirectorios como /usr/bin (binarios de usuario), /usr/lib (bibliotecas), /usr/share (datos compartidos), /usr/include (encabezados).
+	
+	/lib:
+	Descripción: Contiene las bibliotecas compartidas esenciales y módulos del núcleo.
+	Contenido: Bibliotecas necesarias para que los binarios en /bin y /sbin funcionen (por ejemplo, /lib/libc.so).
+	
+	/mnt:
+	Descripción: Un punto de montaje temporal para dispositivos de almacenamiento, como discos duros externos o unidades USB.
+	Contenido: Dispositivos externos montados temporalmente (por ejemplo, /mnt/usb).
+	
+	/media:
+	Descripción: Similar a /mnt, utilizado para montar medios removibles como CD, DVD y dispositivos USB.
+	Contenido: Medios removibles, como /media/usb o /media/cdrom.
 
-/sbin:
-Descripción: Contiene binarios del sistema utilizados generalmente para tareas de mantenimiento o recuperación, a menudo por el usuario root.
-Contenido: Comandos como fsck, reboot, ifconfig, etc.
+- ¿Qué son los archivos de registro del sistema?
+  
+	Los archivos de registro del sistema son archivos donde se almacenan mensajes generados por el sistema operativo y diversas aplicaciones. Estos archivos permiten monitorear eventos importantes, errores, advertencias y otras actividades del sistema.
+- ¿Qué es syslog? ¿Cuáles son los principales archivos relacionados con syslog? ¿Qué tipos de información se registran en los archivos de registro? ¿Cuál es su estructura? Proporcione cinco ejemplos de eventos registrados. ¿Funciona syslog en los sistemas operativos instalados?
+  
+	Syslog es un protocolo estándar para el registro de eventos en sistemas Unix y similares. Permite que las aplicaciones y el sistema operativo envíen mensajes de registro a un servidor de registros centralizado o a archivos locales.
 
-/etc:
-Descripción: Contiene los archivos de configuración global del sistema.
-Contenido: Archivos de configuración para la red, servicios del sistema, usuarios, y scripts de inicio, como /etc/passwd, /etc/fstab, /etc/network.
+	- /var/log/syslog → Contiene mensajes generales del sistema.
+	- /var/log/auth.log → Registra intentos de autenticación y acceso al sistema.
+	- /var/log/kern.log → Contiene mensajes del kernel.
+	- /var/log/dmesg → Muestra los eventos generados durante el arranque del sistema.
+	- /var/log/mail.log → Almacena registros de correos electrónicos.
 
-/dev:
-Descripción: Contiene los archivos de dispositivo que representan los dispositivos de hardware del sistema.
-Contenido: Archivos de dispositivos como /dev/sda (dispositivos de disco), /dev/tty (terminales), etc.
+	Estructura de un archivo de log: Fecha y hora | Nombre del host | Proceso o servicio | Mensaje del evento
 
-/home:
-Descripción: Contiene los directorios personales de los usuarios.
-Contenido: Cada usuario tiene un directorio bajo /home (por ejemplo, /home/usuario).
+- ¿Cómo funcionan los permisos en los sistemas operativos instalados? Explique cómo modificar los permisos mediante representaciones numéricas y de caracteres.
 
-/var:
-Descripción: Contiene datos variables, como registros (logs), bases de datos y archivos de cola.
-Contenido: Archivos de registro en /var/log, colas de correo, archivos temporales, y datos de ejecución.
+	En Linux y Unix, los permisos se definen para usuarios, grupos y otros, y determinan quién puede leer, escribir o ejecutar un archivo o directorio.
 
-/tmp:
-Descripción: Contiene archivos temporales que pueden ser creados por las aplicaciones.
-Contenido: Archivos temporales que pueden eliminarse al reiniciar o apagar el sistema.
+	- Representación en caracteres:
+   
+		r → Lectura (read)
 
-/usr:
-Descripción: Contiene programas, bibliotecas y documentación relacionada con el usuario.
-Contenido: Subdirectorios como /usr/bin (binarios de usuario), /usr/lib (bibliotecas), /usr/share (datos compartidos), /usr/include (encabezados).
+		w → Escritura (write)
 
-/lib:
-Descripción: Contiene las bibliotecas compartidas esenciales y módulos del núcleo.
-Contenido: Bibliotecas necesarias para que los binarios en /bin y /sbin funcionen (por ejemplo, /lib/libc.so).
+		x → Ejecución (execute)
 
-/mnt:
-Descripción: Un punto de montaje temporal para dispositivos de almacenamiento, como discos duros externos o unidades USB.
-Contenido: Dispositivos externos montados temporalmente (por ejemplo, /mnt/usb).
+	**Se usa + para dar permisos y – para quitarlos.**
+  
+	- Representación en números:
+   
+		r = 4
 
-/media:
-Descripción: Similar a /mnt, utilizado para montar medios removibles como CD, DVD y dispositivos USB.
-Contenido: Medios removibles, como /media/usb o /media/cdrom.
+		w = 2
 
+		x = 1
 
-•	What are system log files?
-Los archivos de registro del sistema son archivos donde se almacenan mensajes generados por el sistema operativo y diversas aplicaciones. Estos archivos permiten monitorear eventos importantes, errores, advertencias y otras actividades del sistema.
-•	 What is syslog? What are the main files related to syslog? What types of information are recorded in log files? What is their structure? Provide five examples of logged events. Does syslog work on the installed operating systems?
-Syslog es un protocolo estándar para el registro de eventos en sistemas Unix y similares. Permite que las aplicaciones y el sistema operativo envíen mensajes de registro a un servidor de registros centralizado o a archivos locales.
+		Owner (u)
 
-/var/log/syslog → Contiene mensajes generales del sistema.
-/var/log/auth.log → Registra intentos de autenticación y acceso al sistema.
-/var/log/kern.log → Contiene mensajes del kernel.
-/var/log/dmesg → Muestra los eventos generados durante el arranque del sistema.
-/var/log/mail.log → Almacena registros de correos electrónicos.
+		Group (g)
 
-Estructura de un archivo de log: Fecha y hora | Nombre del host | Proceso o servicio | Mensaje del evento
+		Others (o)
 
-•	How do permissions work in the installed operating systems? Explain how to modify permissions using character and numeric representations.
+**chmod [who][operator][permissions] filename**
 
-En Linux y Unix, los permisos se definen para usuarios, grupos y otros, y determinan quién puede leer, escribir o ejecutar un archivo o directorio.
-Representación en caracteres: 
-o	r → Lectura (read)
-o	w → Escritura (write)
-o	x → Ejecución (execute)
-Se usa + para dar permisos y – para quitarlos.
-	Representación en números:
-o	r = 4
-o	w = 2
-o	x = 1
-o	Owner (u)
-o	Group (g)
-o	Others (o)
+#### Windows Server Installation and Configuration – Phase 2
 
-chmod [who][operator][permissions] filename
+- ¿Cómo se gestionan los permisos en Windows Server?
+  
+	Los permisos en Windows Server se administran a través del Sistema de archivos NTFS y las políticas de grupo (Group Policy). Se pueden configurar permisos a nivel de archivos y carpetas utilizando la pestaña "Seguridad" en las propiedades del archivo o carpeta, donde se pueden asignar permisos a usuarios o grupos. También se pueden administrar permisos en el Active Directory mediante el control de acceso basado en roles (RBAC).
 
-Windows Server Installation and Configuration – Phase 2
-•	How are permissions managed in Windows Server?
-Los permisos en Windows Server se administran a través del Sistema de archivos NTFS y las políticas de grupo (Group Policy). Se pueden configurar permisos a nivel de archivos y carpetas utilizando la pestaña "Seguridad" en las propiedades del archivo o carpeta, donde se pueden asignar permisos a usuarios o grupos. También se pueden administrar permisos en el Active Directory mediante el control de acceso basado en roles (RBAC).
-•	What is the directory structure of Windows Server?
-C:\Windows – Contiene archivos del sistema operativo.
-C:\Program Files – Almacena aplicaciones instaladas.
-C:\Program Files (x86) – Para aplicaciones de 32 bits en sistemas de 64 bits.
-C:\Users – Contiene perfiles de usuario.
-C:\Windows\System32 – Archivos esenciales del sistema y ejecutables.
-C:\Windows\SysWOW64 – Versiones de 32 bits de archivos de System32 en sistemas de 64 bits.
-C:\inetpub – Directorio para servidores web en IIS (Internet Information Services).
-C:\Windows\Logs – Archivos de registro del sistema y de eventos
-•	What is the Windows Registry? What is its purpose? How is it edited? What type of information does it store?
-El Registro de Windows (Windows Registry) es una base de datos jerárquica donde el sistema operativo y las aplicaciones almacenan configuraciones y ajustes.
+- ¿Cuál es la estructura de directorios de Windows Server?
+	- C:\Windows – Contiene archivos del sistema operativo.
+	- C:\Program Files – Almacena aplicaciones instaladas.
+	- C:\Program Files (x86) – Para aplicaciones de 32 bits en sistemas de 64 bits.
+	- C:\Users – Contiene perfiles de usuario.
+	- C:\Windows\System32 – Archivos esenciales del sistema y ejecutables.
+	- C:\Windows\SysWOW64 – Versiones de 32 bits de archivos de System32 en sistemas de 64 bits.
+	- C:\inetpub – Directorio para servidores web en IIS (Internet Information Services).
+	- C:\Windows\Logs – Archivos de registro del sistema y de eventos
 
-Su propósito es mantener información crucial sobre el sistema, como configuraciones de hardware, perfiles de usuario y preferencias de software.
+- ¿Qué es el Registro de Windows? ¿Cuál es su propósito? ¿Cómo se edita? ¿Qué tipo de información almacena?
+  
+	El Registro de Windows (Windows Registry) es una base de datos jerárquica donde el sistema operativo y las aplicaciones almacenan configuraciones y ajustes. Su propósito es mantener información crucial sobre el sistema, como configuraciones de hardware, perfiles de usuario y preferencias de software.
+	
+	Se puede editar utilizando Regedit:
+	- Presionar Win + R, escribir regedit y presionar Enter.
+	- Navegar por la estructura en forma de árbol de claves y valores.
+	- Modificar valores según sea necesario.
 
-Se puede editar utilizando la herramienta Regedit:
-Presionar Win + R, escribir regedit y presionar Enter.
-Navegar por la estructura en forma de árbol de claves y valores.
-Modificar valores según sea necesario (con precaución).
-•	How are Windows Server logs accessed?
-Se puede acceder a los logs en la carpeta: C:\Windows\System32\winevt\Logs
-O mediante PowerShell: Get-EventLog -LogName System
+- ¿Cómo se accede a los registros de Windows Server?
+  
+	Se puede acceder a los logs en la carpeta: C:\Windows\System32\winevt\Logs
 
-•	Identify server log events such as failed login attempts, user access, and unauthorized actions (e.g., attempting to delete a file without permission). 
-Código para ver accesos fallidos: 
-$logfile = "security"
+	O mediante PowerShell: Get-EventLog -LogName System
 
-$failedAttempts = Get-WinEvent -LogName $logfile | Where-Object { $_.Id -eq 4625 }
+- Identifique eventos de registro del servidor, como intentos fallidos de inicio de sesión, acceso de usuarios y acciones no autorizadas (por ejemplo, intentar eliminar un archivo sin permiso).
+  
+	Código para ver accesos fallidos: 
 
-Write-Host "Intentos fallidos de acceso al usuario Administrator:"
+#### Command Line Knowledge
 
-$failedAttempts | ForEach-Object {
-  $eventTime = $_.TimeCreated
-  $user = $_.Properties[5].value
-  if ($user -eq "Administrator") {
-    Write-Host "$eventTime - Usuario: $user"
-  }
-}
+- ¿Qué es el Shell?
+  
+	Es una interfaz de línea de comando que actúa como interfaz entre el usuario y el sistema operativo. El shell permite controlar los archivos y procesos del sistema operativo, así como iniciar y controlar otros programas.
 
-$total = ($failedAttempts | Where-Object { $_.Properties[5].Value -eq "Administrator" }).Count
-Write-Host "Cantidad total de intentos fallidos: $total"
+- ¿Qué shells son compatibles con Slackware, NetBSD, Windows?
+	Slackware (Linux): Bash (Bourne Again Shell), Zsh (Z Shell), Tcsh (TENEX C Shell)
+
+	NetBSD (Unix): Bash (Bourne Again Shell), Csh (C Shell), Tcsh (TENEX C Shell, una mejora del C Shell), Zsh (Z Shell)
+
+	Windows: Command Prompt (CMD), PowerShell,  Windows Subsystem for Linux (WSL).
+
+- ¿Cuáles son sus diferencias? Compare los shells basados ​​en Unix por separado de los shells de Windows.
+
+<div align="center">
+	<img width="750" alt="image" src="https://github.com/user-attachments/assets/8f15e28c-be8f-4265-ab52-d70da4ec47bb" />
+</div>
+
 
 ### Uso y aplicaciones
+
+[Ver información sobre Slackware](Slackware.md)
+
+[Ver información sobre NetBSD](NetBSD.md)
+
+[Ver información sobre Windows](Windows.md)
+
+[Ver información sobre Android](Android.md)
+
 
 ## Conclusiones 
 ### Experiencia de Instalación y Configuración
@@ -317,4 +350,3 @@ Write-Host "Cantidad total de intentos fallidos: $total"
 Este laboratorio fue una experiencia enriquecedora que no solo nos permitió adquirir habilidades técnicas, sino también mejorar nuestra capacidad para resolver problemas y trabajar en equipo. El conocimiento adquirido sobre la virtualización y la configuración de sistemas operativos es fundamental para cualquier profesional en el ámbito de la administración de sistemas y redes.
 
 
-## Bibliografía 
