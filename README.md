@@ -1,6 +1,9 @@
 # Informe de laboratorio
 
 ## Introducción
+El objetivo principal de este laboratorio fue instalar y configurar distintas distribuciones de sistemas operativos Unix y Windows como parte de la configuración de la plataforma. También se buscó familiarizarse con el uso de software de virtualización. Este laboratorio nos proporcionó la oportunidad de aprender y aplicar conceptos clave en la administración de sistemas y redes dentro de un entorno práctico.
+
+Durante el laboratorio, utilizamos el laboratorio de computación de la institución, que contaba con equipos, acceso a internet y software de virtualización. Cada grupo de estudiantes trajo imágenes de sistemas operativos y dispositivos de almacenamiento externos para completar las tareas asignadas. Se realizaron diversas actividades que abarcaron desde la instalación de sistemas operativos hasta la configuración de usuarios y redes.
 
 ## Desarrollo del tema 
 [Ver información sobre Slackware](Slackware.md)
@@ -231,5 +234,34 @@ Write-Host "Cantidad total de intentos fallidos: $total"
 ### Uso y aplicaciones
 
 ## Conclusiones 
+### Experiencia de Instalación y Configuración
+
+1. *Instalación de Sistemas Operativos*:
+   - La instalación de Linux Slackware y NetBSD en modo experto, sin entorno gráfico, nos permitió entender mejor los componentes esenciales para el funcionamiento básico del sistema.
+   - La instalación de Windows Server, tanto en versión gráfica como sin interfaz gráfica, nos mostró las diferencias en la gestión de sistemas operativos Unix y Windows.
+
+2. *Configuración de Red*:
+   - Configurar las direcciones IP, la máscara de subred, y el gateway de manera manual y automática nos proporcionó una comprensión más profunda de los conceptos de Bridge Mode y NAT Mode.
+3. *Manejo de Usuarios y Permisos*:
+   - La creación de usuarios y grupos, así como la asignación de permisos específicos, nos ayudó a entender la administración de sistemas y la importancia de la seguridad en la gestión de usuarios.
+
+4. *Pruebas de Conectividad*:
+   - Realizar pruebas de conectividad con comandos como ping nos permitió verificar la funcionalidad de la red y la configuración correcta de las IPs.
+
+### Comparaciones y Observaciones
+
+- *Estructura de Directorios*:
+  - Comparar las estructuras de directorios y los archivos de configuración en Slackware y NetBSD nos dio una visión clara de cómo se organizan y administran los archivos en diferentes sistemas Unix.
+  
+- *Registros del Sistema (Logs)*:
+  - Aprendimos sobre la importancia de los archivos de registro (logs) y cómo utilizar syslog para monitorear eventos en los sistemas instalados.
+
+- *Permisos*:
+  - La modificación de permisos utilizando representaciones numéricas y de caracteres destacó la flexibilidad y control que se puede tener sobre los recursos del sistema.
+
+### Reflexión Final
+
+Este laboratorio fue una experiencia enriquecedora que no solo nos permitió adquirir habilidades técnicas, sino también mejorar nuestra capacidad para resolver problemas y trabajar en equipo. El conocimiento adquirido sobre la virtualización y la configuración de sistemas operativos es fundamental para cualquier profesional en el ámbito de la administración de sistemas y redes.
+
 
 ## Bibliografía 
