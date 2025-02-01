@@ -9,92 +9,145 @@ Durante el laboratorio, utilizamos el laboratorio de computación de la instituc
 [Ver información sobre Slackware](Slackware.md)
 
 ### Marco teórico
-Unix-Based Server Setup	
-a. Server Installation and Configuration
-•	What files are generated during installation in each virtualization software, and what are their purposes?
-Archivos comunes en todas las máquinas virtuales de VMWare:
-Archivos de configuración:
-.vmx - El archivo principal de configuración que contiene todos los ajustes de la máquina virtual
-.vmxf - Archivo de configuración adicional con metadatos de la máquina virtual
-.nvram - Almacena la configuración del BIOS/UEFI de la máquina virtual
+#### Unix-Based Server Setup	
+##### a. Server Installation and Configuration
+- ¿Qué archivos se generan durante la instalación en cada software de virtualización y cuáles son sus propósitos?
+  
+	- Archivos comunes en todas las máquinas virtuales de VMWare:
+   
+   		- Archivos de configuración:
+       
+			.vmx - El archivo principal de configuración que contiene todos los ajustes de la máquina virtual
+	   
+			.vmxf - Archivo de configuración adicional con metadatos de la máquina virtual
+	   
+			.nvram - Almacena la configuración del BIOS/UEFI de la máquina virtual
+	
+		- Archivos de almacenamiento:
+    
+			.vmdk - El disco virtual que contiene el sistema operativo y datos. Contiene tanto los datos del disco como los descriptores
+    
+			-flat.vmdk - Contiene los datos reales del disco virtual
+    
+			.vmem - Archivo de memoria cuando la máquina está suspendida
 
-Archivos de almacenamiento:
-.vmdk - El disco virtual que contiene el sistema operativo y datos. Contiene tanto los datos del disco como los descriptores
--flat.vmdk - Contiene los datos reales del disco virtual
-.vmem - Archivo de memoria cuando la máquina está suspendida
+		- Archivos de estado:
+    
+			.vmsd - Almacena información sobre snapshots
+    
+			.vmsn - Archivos de snapshot individuales
+    
+			.vmss - Archivo del estado guardado cuando la máquina está suspendida
 
-Archivos de estado:
-.vmsd - Almacena información sobre snapshots
-.vmsn - Archivos de snapshot individuales
-.vmss - Archivo del estado guardado cuando la máquina está suspendida
+	- Archivos para Slackware:
+   
+		- Archivos de sistema:
+   
+			/etc/inittab - Controla el proceso de inicio del sistema
+   
+			/etc/fstab - Configuración de puntos de montaje
+   
+			/etc/passwd y /etc/shadow - Información de usuarios y contraseñas
+   
+			/etc/hostname - Nombre del host
+   
+			/etc/resolv.conf - Configuración DNS
+   
+			/var/log/messages – Almacena todos los eventos de autenticación al sistema
 
+	  	- Archivos de gestión de paquetes:
+   	  
+			/var/log/packages/* - Registro de todos los paquetes instalados
 
-	Archivos para Slackware:
-Archivos de sistema: 
-o	/etc/inittab - Controla el proceso de inicio del sistema
-o	/etc/fstab - Configuración de puntos de montaje
-o	/etc/passwd y /etc/shadow - Información de usuarios y contraseñas
-o	/etc/hostname - Nombre del host
-o	/etc/resolv.conf - Configuración DNS
-o	/var/log/messages – Almacena todos los eventos de autenticación al sistema
+			/var/log/scripts/* - Scripts de instalación de paquetes
 
-Archivos de gestión de paquetes:
-o	/var/log/packages/* - Registro de todos los paquetes instalados
-o	/var/log/scripts/* - Scripts de instalación de paquetes
-o	/etc/slackpkg/slackpkg.conf - Configuración del gestor de paquetes
+			/etc/slackpkg/slackpkg.conf - Configuración del gestor de paquetes
 
-Scripts de inicio:
-o	/etc/rc.d/rc.M - Script principal de inicio
-o	/etc/rc.d/rc.inet1 - Configuración de red
-o	/etc/rc.d/rc.local - Scripts personalizados de inicio
+		- Scripts de inicio:
+    
+			/etc/rc.d/rc.M - Script principal de inicio
 
-Archivos para NetBSD:
-Archivos de sistema:
-o	/etc/master.passwd - Base de datos principal de usuarios
-o	/etc/pwd.db y /etc/spwd.db - Bases de datos de contraseñas
-o	/etc/fstab - Tabla de sistemas de archivos
-o	/etc/hostame.if0 - Configuración de la interfaz de red
-o	/var/log/authlog– Almacena todos los eventos de autenticación al sistema
-Archivos de configuración:
-o	/etc/rc.conf - Configuración principal del sistema
-o	/etc/nsswitch.conf - Configuración de servicios de nombres
-o	/etc/mk.conf - Configuración de compilación
-Gestión de paquetes:
-o	/var/db/pkg/ - Base de datos de paquetes instalados
-o	/usr/pkg/etc/ - Configuración de paquetes instalados
-o	/var/db/pkgin/ - Base de datos del gestor de paquetes pkgin
+			/etc/rc.d/rc.inet1 - Configuración de red
 
-•	What is the file system? Which one did you use during installation? What are its characteristics?
-Un sistema de archivos (FS) es la estructura que un sistema operativo utiliza para organizar y almacenar archivos en un dispositivo de almacenamiento (un disco duro, por ejemplo). El sistema de archivos gestiona cómo los datos se almacenan, se recuperan y se organizan en dispositivos de almacenamiento.
+			/etc/rc.d/rc.local - Scripts personalizados de inicio
 
-Slackware
-ext4 (Fourth Extended Filesystem):
-Características:
-Mejor rendimiento y fiabilidad: ext4 es el sucesor de ext3 y mejora el rendimiento y la fiabilidad.
-Soporte para archivos grandes: Ext4 soporta volúmenes de hasta 1 exabyte y archivos de hasta 16 terabytes.
-Journaling: Al igual que ext3, ext4 usa journaling para prevenir la corrupción de datos, lo que mejora la recuperación en caso de un apagón inesperado o fallo del sistema.
-Optimización de espacio: ext4 mejora la eficiencia en la distribución de espacio libre y la gestión de archivos.
-Compatibilidad: ext4 es totalmente compatible con ext3, lo que facilita la migración.
+	- Archivos para NetBSD:
+   
+		- Archivos de sistema:
+    
+			/etc/master.passwd - Base de datos principal de usuarios
 
-NetBSD
-FFS (Fast File System):
+			/etc/pwd.db y /etc/spwd.db - Bases de datos de contraseñas
 
-Características:
-Diseñado para UNIX: FFS fue diseñado inicialmente para sistemas operativos tipo UNIX.
-Compatibilidad: Es el sistema de archivos más utilizado en sistemas BSD, incluidos NetBSD.
-Journaling: No tiene journaling (aunque es posible habilitarlo en algunos casos mediante el uso de un sistema como UFS2).
-Bloques: FFS organiza los archivos en bloques de tamaño fijo, lo que permite un rendimiento eficiente.
+			/etc/fstab - Tabla de sistemas de archivos
 
-Journaling: En un sistema de archivos con journaling, el sistema registra (o "escribe en un diario") las operaciones de modificación antes de realizar cualquier cambio en los archivos o en la estructura del sistema de archivos.
+			/etc/hostame.if0 - Configuración de la interfaz de red
 
-•	Is it possible to convert a VMware virtual machine to VirtualBox and vice versa? 
-De VMWare a VirtualBox:
-1.	En VMware, exportar la máquina virtual como OVF(Open Virtualization Format)/OVA(Open Virtual Appliance)
-2.	En VirtualBox, importar el archivo OVF/OVA
-De VirtualBox a VMWare:
-1.	En VirtualBox, exportar la máquina virtual como OVF(Open Virtualization Format)
-2.	En VMWare, importar el archivo OVF
-3.	Si se importa la máquina virtual desde Virtual Box como OVA, se debe pasar por una herramienta que convierta el archivo OVA a VMX.
+			/var/log/authlog– Almacena todos los eventos de autenticación al sistema
+
+		- Archivos de configuración:
+    
+			/etc/rc.conf - Configuración principal del sistema
+
+			/etc/nsswitch.conf - Configuración de servicios de nombres
+
+			/etc/mk.conf - Configuración de compilación
+
+		- Gestión de paquetes:
+    
+			/var/db/pkg/ - Base de datos de paquetes instalados
+
+			/usr/pkg/etc/ - Configuración de paquetes instalados
+
+			/var/db/pkgin/ - Base de datos del gestor de paquetes pkgin
+
+- ¿Qué es el sistema de archivos? ¿Cuál usaste durante la instalación? ¿Cuáles son sus características?
+  
+	Un sistema de archivos (FS) es la estructura que un sistema operativo utiliza para organizar y almacenar archivos en un dispositivo de almacenamiento (un disco duro, por ejemplo). El sistema de archivos gestiona cómo los datos se almacenan, se recuperan y se organizan en dispositivos de almacenamiento.
+
+	**Slackware**
+   
+	ext4 (Fourth Extended Filesystem):
+
+	Características:
+
+	Mejor rendimiento y fiabilidad: ext4 es el sucesor de ext3 y mejora el rendimiento y la fiabilidad.
+
+	Soporte para archivos grandes: Ext4 soporta volúmenes de hasta 1 exabyte y archivos de hasta 16 terabytes.
+
+	Journaling: Al igual que ext3, ext4 usa journaling para prevenir la corrupción de datos, lo que mejora la recuperación en caso de un apagón inesperado o fallo del sistema.
+  
+	Optimización de espacio: ext4 mejora la eficiencia en la distribución de espacio libre y la gestión de archivos.
+  
+	Compatibilidad: ext4 es totalmente compatible con ext3, lo que facilita la migración.
+
+	**NetBSD**
+  
+	FFS (Fast File System):
+
+	Características:
+
+	Diseñado para UNIX: FFS fue diseñado inicialmente para sistemas operativos tipo UNIX.
+
+	Compatibilidad: Es el sistema de archivos más utilizado en sistemas BSD, incluidos NetBSD.
+
+	Journaling: No tiene journaling (aunque es posible habilitarlo en algunos casos mediante el uso de un sistema como UFS2).
+
+	Bloques: FFS organiza los archivos en bloques de tamaño fijo, lo que permite un rendimiento eficiente.
+	
+	Journaling: En un sistema de archivos con journaling, el sistema registra (o "escribe en un diario") las operaciones de modificación antes de realizar cualquier cambio en los archivos o en la estructura del sistema de archivos.
+
+- ¿Es posible convertir una máquina virtual VMware a VirtualBox y viceversa?
+
+	De VMWare a VirtualBox:
+
+	1.	En VMware, exportar la máquina virtual como OVF(Open Virtualization Format)/OVA(Open Virtual Appliance)
+	2.	En VirtualBox, importar el archivo OVF/OVA
+
+	De VirtualBox a VMWare:
+	1.	En VirtualBox, exportar la máquina virtual como OVF(Open Virtualization Format)
+	2.	En VMWare, importar el archivo OVF
+	3.	Si se importa la máquina virtual desde Virtual Box como OVA, se debe pasar por una herramienta que convierta el archivo OVA a VMX.
 
 
 
