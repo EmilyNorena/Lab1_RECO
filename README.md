@@ -8,6 +8,8 @@ Durante el laboratorio, utilizamos el laboratorio de computación de la instituc
 ## Desarrollo del tema 
 
 ### Marco teórico
+###Vitualization software
+**https://youtu.be/LrUFoiAMoJI**
 #### Unix-Based Server Setup	
 ##### a. Server Installation and Configuration
 - ¿Qué archivos se generan durante la instalación en cada software de virtualización y cuáles son sus propósitos?
@@ -348,5 +350,4 @@ Durante el laboratorio, utilizamos el laboratorio de computación de la instituc
 ### Reflexión Final
 
 Este laboratorio fue una experiencia enriquecedora que no solo nos permitió adquirir habilidades técnicas, sino también mejorar nuestra capacidad para resolver problemas y trabajar en equipo. El conocimiento adquirido sobre la virtualización y la configuración de sistemas operativos es fundamental para cualquier profesional en el ámbito de la administración de sistemas y redes.
-
 
