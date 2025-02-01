@@ -8,7 +8,7 @@ Durante el laboratorio, utilizamos el laboratorio de computación de la instituc
 ## Desarrollo del tema 
 
 ### Marco teórico
-###Vitualization software
+### Vitualization software
 
 **https://youtu.be/LrUFoiAMoJI**
 #### Unix-Based Server Setup	
